@@ -22,8 +22,6 @@
             android:id="@+id/txt_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="46dp"
-            android:autoSizeMaxTextSize="20sp"
             android:fontFamily="@font/gothic_080"
             android:text="책장 속 발견"
             android:textSize="20sp" />
@@ -36,7 +34,6 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
