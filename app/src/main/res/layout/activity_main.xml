@@ -1,118 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigationBar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_main_ad"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="horizontal">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:itemIconSize="22dp"
+        android:background="#f7f7f7"
+        app:itemTextColor="#8e8e93"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menu"/>
 
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <TextView
-            android:id="@+id/txt_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="46dp"
-            android:autoSizeMaxTextSize="20sp"
-            android:fontFamily="@font/gothic_080"
-            android:text="책장 속 발견"
-            android:textSize="20sp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="와 함께 꽂혀있는 책이에요"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView5"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="horizontal" />
-
-        <TextView
-            android:id="@+id/txt_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="취향이 비슷한 사람들" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/txt_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView님"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txt_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="과 취향이 비슷한 사람들은 이런 책도 좋아해요"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_user"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:id="@+id/txt_third"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <TextView
-            android:id="@+id/txt_fourth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="오늘의 베스트셀러" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

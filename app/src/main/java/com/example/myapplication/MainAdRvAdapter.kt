@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MainAdRvAdapter (val context: Context, val mainadList: ArrayList<Main_ad>):
+class MainAdRvAdapter(val context: Context, val mainadList: ArrayList<Main_ad>):
 RecyclerView.Adapter<MainAdRvAdapter.Holder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.main_ad_rv_item, parent, false)
