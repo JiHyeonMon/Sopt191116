@@ -1,119 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_main_ad"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:nestedScrollingEnabled="false"
-            android:scrollbars="horizontal">
+            android:orientation="vertical">
 
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <TextView
-            android:id="@+id/txt_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gothic_080"
-            android:text="책장 속 발견"
-            android:textSize="20sp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main_ad"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="57dp"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/txt_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="46dp"
+                android:fontFamily="@font/gothic_080"
+                android:text="책장 속 발견"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_main_ad" />
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="227dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="21dp"
+                android:background="#e2e2e2"
+                app:layout_constraintBottom_toTopOf="@id/homeFind_txt_author"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/txt_first"
+                app:layout_constraintTop_toBottomOf="@+id/rv_main_ad"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/homeFind_txt_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="9dp"
+                android:text="디자인에 집중하라"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_first" />
+
+            <TextView
+                android:id="@+id/homeFind_txt_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
                 android:text="와 함께 꽂혀있는 책이에요"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView5"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/homeFind_txt_book"
+                app:layout_constraintTop_toBottomOf="@+id/txt_first" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false"
-            android:scrollbars="horizontal" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_Find"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_marginTop="14dp"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeFind_txt_author" />
 
-        <TextView
-            android:id="@+id/txt_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="취향이 비슷한 사람들" />
+            <TextView
+                android:id="@+id/txt_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="54dp"
+                android:fontFamily="@font/gothic_080"
+                android:text="취향이 비슷한 사람들"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_home_Find" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <View
+                android:id="@+id/view1"
+                android:layout_width="153dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="21dp"
+                android:background="#e2e2e2"
+                app:layout_constraintBottom_toTopOf="@id/txt_context"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/txt_second"
+                app:layout_constraintTop_toBottomOf="@+id/rv_home_Find"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/txt_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView님"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="9dp"
+                android:text="이성민님"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_second" />
 
             <TextView
-                android:id="@+id/txt_"
+                android:id="@+id/txt_context"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
                 android:text="과 취향이 비슷한 사람들은 이런 책도 좋아해요"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/txt_user"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_second" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_taste"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:layout_marginTop="14dp"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_context" />
+
+            <TextView
+                android:id="@+id/txt_third"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="52dp"
+                android:text="TextView"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_home_taste" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_third"
+                app:srcCompat="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/txt_fourth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="오늘의 베스트셀러"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:nestedScrollingEnabled="false"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:id="@+id/txt_third"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <TextView
-            android:id="@+id/txt_fourth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="오늘의 베스트셀러" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:nestedScrollingEnabled="false"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

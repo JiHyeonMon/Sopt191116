@@ -7,14 +7,26 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.FindBook.FindBookAdapter
+import com.example.myapplication.FindBook.FindBookDummy
 import com.example.myapplication.MainAdRvAdapter
 import com.example.myapplication.Main_ad
 import com.example.myapplication.R
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.example.myapplication.TasteBook.TasteBookAdapter
+import com.example.myapplication.TasteBook.TasteBookDummy
 
 class HomeFragment : Fragment() {
     private lateinit var rvMain : RecyclerView
     private lateinit var mAdapter: MainAdRvAdapter
+
+    private lateinit var rvHomefindView: RecyclerView
+    private lateinit var findBookAdapter: FindBookAdapter
+    private val findBookDummy = FindBookDummy()
+
+    private lateinit var rvHometasteView: RecyclerView
+    private lateinit var tasteBookAdapter: TasteBookAdapter
+    private val tasteBookDummy = TasteBookDummy()
+
     var mainadList = arrayListOf<Main_ad>(
         Main_ad("베스트 셀러를\n무제한으로 읽어보세요", "2개월 무료후 9,900원\n무한eBook서비스 최다 책 보유", "main_ad_img"),
         Main_ad("두번째 광고", "호호", "main_ad_img")
@@ -46,7 +58,7 @@ class HomeFragment : Fragment() {
         snapHelper.attachToRecyclerView(rvMain)
 
 
-        initGitRepoList()
+        initGitRepoList(view)
 
 
 
@@ -54,11 +66,45 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun initGitRepoList(){
+    private fun initGitRepoList(v: View){
 
         var mainadList = arrayListOf<Main_ad>()
 
+        //FindBoook
+        // 다른 것과 같이 메모리로 가져오자.
+        rvHomefindView = v.findViewById(R.id.rv_home_Find)
+        // this 로 현재 context 를 전달하자.
+        findBookAdapter = FindBookAdapter(context!!)
+        // 어뎁터에 우리가 정의한 data 를 대입하고
+        findBookAdapter.data = findBookDummy.bookList()
+        // 우리의 recyclerView 에 우리의 adapter 로 세팅하자.
+        rvHomefindView.adapter = findBookAdapter
+        // viewHolder 들이 어떻게 배치될 지 설정하자.
+        //rvHomefindView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        val lm = LinearLayoutManager(context)
+        rvHomefindView.layoutManager = lm
+        rvHomefindView.setHasFixedSize(true)
+        lm.setOrientation(LinearLayoutManager.HORIZONTAL)
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(rvHomefindView)
 
+        //TasteBoook
+        rvHometasteView = v.findViewById(R.id.rv_home_taste)
+        tasteBookAdapter = TasteBookAdapter(context!!)
+        tasteBookAdapter.data = tasteBookDummy.bookTasteList()
+        rvHometasteView.adapter = tasteBookAdapter
+        rvHometasteView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        snapHelper.attachToRecyclerView(rvHometasteView)
+        //val lm = LinearLayoutManager(context)
+        /*
+        rvHometasteView.layoutManager = lm
+        rvHometasteView.setHasFixedSize(true)
+        lm.setOrientation(LinearLayoutManager.HORIZONTAL)
+        PagerSnapHelper()
+        snapHelper.attachToRecyclerView(rvHometasteView)*/
+
+        // 데이터를 변경했다고 알려줘서 리스트를 갱신하게 하자!
+        //tasteBookAdapter.notifyDataSetChanged()
     }
 /*
     private lateinit var rvMain : RecyclerView
