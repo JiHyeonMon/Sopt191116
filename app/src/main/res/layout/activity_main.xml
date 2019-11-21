@@ -6,10 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/menu_top" />
+    </LinearLayout>
+
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_main"
         android:layout_above="@+id/bottomNavigationBar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
