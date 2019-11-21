@@ -201,7 +201,7 @@
                 android:text="#조직 #리더 #경영 #애자일 #리더십 #팀 #인게이지먼트 #"
                 android:textSize="12sp"
                 android:layout_marginStart="20dp"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_custom_keyword" />
 
             <TextView
