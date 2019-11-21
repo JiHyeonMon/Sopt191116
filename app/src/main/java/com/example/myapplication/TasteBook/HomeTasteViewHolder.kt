@@ -1,5 +1,6 @@
 package com.example.myapplication.TasteBook
 import android.view.View
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -15,7 +16,7 @@ class HomeTasteViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val homeTaste_txt_author: TextView = view.findViewById(R.id.homeTaste_txt_author)
         val homeTaste_ratingbar : RatingBar = view.findViewById(R.id.homeTaste_ratingbar)
         val homeTaste_txt_rating: TextView = view.findViewById(R.id.homeTaste_txt_rating)
-        val homeTaste_checkbox: ImageView = view.findViewById(R.id.homeTaste_checkbox)
+        val homeTaste_checkbox: CheckBox = view.findViewById(R.id.homeTaste_checkbox)
 
         fun bind(data: BookTasteItem) {
             //Glide.with(itemView).load(data.url).into(homeFind_img_book)

@@ -1,5 +1,6 @@
 package com.example.myapplication.FindBook
 import android.view.View
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -15,7 +16,7 @@ class HomeFindViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val homeFind_txt_author: TextView = view.findViewById(R.id.homeFind_txt_author)
         val homeFind_ratingbar : RatingBar = view.findViewById(R.id.homeFind_ratingbar)
         val homeFind_txt_rating: TextView = view.findViewById(R.id.homeFind_txt_rating)
-        val homeFind_checkbox: ImageView = view.findViewById(R.id.homeFind_checkbox)
+        val homeFind_checkbox: CheckBox = view.findViewById(R.id.homeFind_checkbox)
 
         fun bind(data: BookItem) {
             //Glide.with(itemView).load(data.url).into(homeFind_img_book)
