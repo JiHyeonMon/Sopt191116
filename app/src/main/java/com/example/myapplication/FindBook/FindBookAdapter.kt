@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.TasteBook.HomeTasteViewHolder
 
 
 class FindBookAdapter (private val context: Context): RecyclerView.Adapter<HomeFindViewHolder>(){

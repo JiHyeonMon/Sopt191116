@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        libraryFragment = LibraryFragment()
+        bottomNavigationBar.menu.getItem(1).setChecked(true)
+        libraryFragment = LibraryFragment(this)
         homeFragment = HomeFragment()
         accountFragment = AccountFragment()
         setFrag(1)
