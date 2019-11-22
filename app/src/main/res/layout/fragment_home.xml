@@ -177,11 +177,11 @@
                 android:id="@+id/txt_context_ck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
                 android:layout_marginStart="14dp"
+                android:layout_marginTop="9dp"
                 android:text="내게 맞는 추천 키워드를 만나보세요"
                 android:textSize="15sp"
-                app:layout_constraintStart_toEndOf=""
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_custom_keyword" />
 
             <ImageView
