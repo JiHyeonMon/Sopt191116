@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,6 +40,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="46dp"
                 android:fontFamily="@font/gothic_080"
+                android:textColor="#222222"
                 android:text="책장 속 발견"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -84,8 +86,8 @@
                 android:id="@+id/rv_home_Find"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="7dp"
                 android:layout_marginTop="14dp"
+                android:layout_marginLeft="7dp"
                 android:nestedScrollingEnabled="false"
                 android:scrollbars="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -99,6 +101,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="54dp"
                 android:fontFamily="@font/gothic_080"
+                android:textColor="#222222"
                 android:text="취향이 비슷한 사람들"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,9 +145,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_taste"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="7dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
+                android:layout_marginLeft="7dp"
                 android:nestedScrollingEnabled="false"
                 android:scrollbars="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -157,6 +160,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="52dp"
+                android:fontFamily="@font/gothic_080"
+                android:textColor="#222222"
                 android:text="이성민님의 맞춤 키워드"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -200,7 +205,6 @@
                 android:layout_marginTop="9dp"
                 android:text="#조직 #리더 #경영 #애자일 #리더십 #팀 #인게이지먼트 #"
                 android:textSize="12sp"
-                android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_custom_keyword" />
 
@@ -213,6 +217,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="54dp"
                 android:fontFamily="@font/gothic_080"
+                android:textColor="#222222"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_hashtag" />

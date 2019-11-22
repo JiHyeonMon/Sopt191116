@@ -23,10 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:textColor="#222222"
         android:layout_marginTop="17dp"
+        android:fontFamily="@font/gothic_080"
         android:text="홀라크러시"
         android:textSize="15sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/homeTaste_img_book"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,6 +38,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="7dp"
         android:text="브라이언 J. 로버트슨 저/김도현..."
+        android:fontFamily="@font/gothic_060"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/homeTaste_img_book"
         app:layout_constraintTop_toBottomOf="@+id/homeTaste_txt_book" />
@@ -64,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
         android:layout_marginTop="102dp"
+        android:fontFamily="@font/gothic_060"
         android:text="4.1 (23명)"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
