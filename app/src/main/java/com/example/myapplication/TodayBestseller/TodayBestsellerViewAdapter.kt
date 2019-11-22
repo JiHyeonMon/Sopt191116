@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 
-class TodaybestsellerViewAdapter(private val context: Context):RecyclerView.Adapter<TodayBestsellerViewHolder>() {
+class TodayBestsellerViewAdapter(private val context: Context):RecyclerView.Adapter<TodayBestsellerViewHolder>() {
 
     var data = listOf<TodayBestsellerData>()
 

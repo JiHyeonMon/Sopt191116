@@ -1,7 +1,7 @@
 package com.example.myapplication.TodayBestseller
 
-internal class TodaybestsellerDummy {
-    fun bookTasteList() : List<TodayBestsellerData>{
+internal class TodayBestsellerDummy {
+    fun TodayBestsellerList() : List<TodayBestsellerData>{
         return listOf(
             TodayBestsellerData(
                 status = 1
