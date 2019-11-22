@@ -36,19 +36,22 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun setFrag(n : Int) {
-        val fm : FragmentManager = supportFragmentManager
+    private fun setFrag(n: Int) {
+        val fm: FragmentManager = supportFragmentManager
         val ft = fm.beginTransaction()
         when (n) {
             0 -> { // 서재
                 ft.replace(R.id.container, libraryFragment)
-                ft.commit() }
+                ft.commit()
+            }
             1 -> { // 홈
                 ft.replace(R.id.container, homeFragment)
-                ft.commit() }
+                ft.commit()
+            }
             2 -> { // 내 계정
                 ft.replace(R.id.container, accountFragment)
-                ft.commit() }
+                ft.commit()
+            }
         }
     }
 
@@ -77,8 +80,8 @@ class MainActivity : AppCompatActivity() {
         actionBar?.setDisplayShowTitleEnabled(false)
 
 
-        val menuInflater = menuInflater
-        menuInflater.inflate(R.menu.top_menu, menu)
+        // val menuInflater = menuInflater
+        // menuInflater.inflate(R.layout.menu_top, menu)
         return true
         //supportActionBar!!.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
         //supportActionBar!!.setCustomView(R.layout.top_menu)     //layout폴더 menu가 상단바 구성

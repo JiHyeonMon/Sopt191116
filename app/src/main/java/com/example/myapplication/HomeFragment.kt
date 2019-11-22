@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         mAdapter = MainAdRvAdapter(context!!, mainadList)
         rvMain.adapter = mAdapter
 
-        val lm = LinearLayoutManager(context)
+        var lm = LinearLayoutManager(context)
         rvMain.layoutManager = lm
         rvMain.setHasFixedSize(true)
         lm.setOrientation(LinearLayoutManager.HORIZONTAL)  //수평 스크롤
