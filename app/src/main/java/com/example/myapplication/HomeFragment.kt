@@ -14,6 +14,8 @@ import com.example.myapplication.Main_ad
 import com.example.myapplication.R
 import com.example.myapplication.TasteBook.TasteBookAdapter
 import com.example.myapplication.TasteBook.TasteBookDummy
+import com.example.myapplication.TodayBestseller.TodayBestsellerDummy
+import com.example.myapplication.TodayBestseller.TodayBestsellerViewAdapter
 
 class HomeFragment : Fragment() {
     private lateinit var rvMain : RecyclerView
@@ -26,6 +28,11 @@ class HomeFragment : Fragment() {
     private lateinit var rvHometasteView: RecyclerView
     private lateinit var tasteBookAdapter: TasteBookAdapter
     private val tasteBookDummy = TasteBookDummy()
+
+    //오늘의 베스트
+    private lateinit var rvTodayBestsellerView: RecyclerView
+    private lateinit var todayBestsellerAdapter: TodayBestsellerViewAdapter
+    private val todayBestsellerDummy = TodayBestsellerDummy()
 
     var mainadList = arrayListOf<Main_ad>(
         Main_ad("베스트 셀러를\n무제한으로 읽어보세요", "2개월 무료후 9,900원\n무한eBook서비스 최다 책 보유", "main_ad_img"),
@@ -52,6 +59,19 @@ class HomeFragment : Fragment() {
         rvMain.layoutManager = lm
         rvMain.setHasFixedSize(true)
         lm.setOrientation(LinearLayoutManager.HORIZONTAL)  //수평 스크롤
+
+        //TodayBeatseller
+        /*
+        rvTodayBestsellerView=view.findViewById(R.id.rv_today_bestseller)
+
+        todayBestsellerAdapter= TodayBestsellerViewAdapter( context!!)
+        rvTodayBestsellerView.adapter=todayBestsellerAdapter
+
+        rvTodayBestsellerView.layoutManager=lm
+        rvTodayBestsellerView.setHasFixedSize(true)
+        todayBestsellerAdapter.notifyDataSetChanged()
+
+         */
 
          //PagerSnapHelper 추가
         val snapHelper = PagerSnapHelper()
@@ -105,6 +125,17 @@ class HomeFragment : Fragment() {
 
         // 데이터를 변경했다고 알려줘서 리스트를 갱신하게 하자!
         //tasteBookAdapter.notifyDataSetChanged()
+
+        //TodayBeatseller
+        rvTodayBestsellerView=v.findViewById(R.id.rv_today_bestseller)
+        todayBestsellerAdapter= TodayBestsellerViewAdapter(context!!)
+        rvTodayBestsellerView.adapter=todayBestsellerAdapter
+
+        rvTodayBestsellerView.layoutManager=lm
+        rvTodayBestsellerView.setHasFixedSize(true)
+        todayBestsellerAdapter.notifyDataSetChanged()
+
+
     }
 /*
     private lateinit var rvMain : RecyclerView
