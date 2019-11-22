@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox
+        android:id="@+id/bookmarkBtn"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:button="@android:color/transparent"
+        android:src="@drawable/bookmark_icon_unselected"/>
+</selector>
