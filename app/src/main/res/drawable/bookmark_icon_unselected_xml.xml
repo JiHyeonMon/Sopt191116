@@ -5,5 +5,5 @@
         android:layout_width="35dp"
         android:layout_height="25dp"
         android:button="@android:color/transparent"
-        android:src="@drawable/bookmark_icon_unselected"/>
+        android:srcCompat="@drawable/bookmark_icon_unselected"/>
 </selector>
