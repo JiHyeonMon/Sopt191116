@@ -191,12 +191,12 @@
 
             <ImageView
                 android:id="@+id/img_custom_keyword"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_context_ck"
-                android:src="@drawable/keword_img" />
+                app:srcCompat="@drawable/keword_img" />
 
             <TextView
                 android:id="@+id/txt_hashtag"
@@ -247,7 +247,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_bestseller"
+                android:id="@+id/rv_today_bestseller"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="7dp"
