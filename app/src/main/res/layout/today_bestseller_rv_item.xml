@@ -12,5 +12,5 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/best_book_img_1" />
+        app:background="@drawable/best_book_img_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
