@@ -1,10 +1,11 @@
-package com.example.myapplication.TasteBook
+package com.example.myapplication.ui.fragment.home.TasteBook
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.data.BookTasteItem
 
 
 class TasteBookAdapter (private val context: Context): RecyclerView.Adapter<HomeTasteViewHolder>(){

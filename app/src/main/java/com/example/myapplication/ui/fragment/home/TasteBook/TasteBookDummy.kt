@@ -1,4 +1,6 @@
-package com.example.myapplication.TasteBook
+package com.example.myapplication.ui.fragment.home.TasteBook
+
+import com.example.myapplication.data.BookTasteItem
 
 
 internal class TasteBookDummy {

@@ -1,10 +1,11 @@
-package com.example.myapplication.FindBook
+package com.example.myapplication.ui.fragment.home.FindBook
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.data.BookItem
 
 
 class FindBookAdapter (private val context: Context): RecyclerView.Adapter<HomeFindViewHolder>(){

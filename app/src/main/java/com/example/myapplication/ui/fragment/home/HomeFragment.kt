@@ -7,13 +7,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.FindBook.FindBookAdapter
-import com.example.myapplication.FindBook.FindBookDummy
+import com.example.myapplication.ui.fragment.home.FindBook.FindBookAdapter
+import com.example.myapplication.ui.fragment.home.FindBook.FindBookDummy
 import com.example.myapplication.MainAdRvAdapter
 import com.example.myapplication.Main_ad
 import com.example.myapplication.R
-import com.example.myapplication.TasteBook.TasteBookAdapter
-import com.example.myapplication.TasteBook.TasteBookDummy
+import com.example.myapplication.ui.fragment.home.TasteBook.TasteBookAdapter
+import com.example.myapplication.ui.fragment.home.TasteBook.TasteBookDummy
 
 class HomeFragment : Fragment() {
     private lateinit var rvMain : RecyclerView
@@ -25,7 +25,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var rvHometasteView: RecyclerView
     private lateinit var tasteBookAdapter: TasteBookAdapter
-    private val tasteBookDummy = TasteBookDummy()
+    private val tasteBookDummy =
+        TasteBookDummy()
 
     var mainadList = arrayListOf<Main_ad>(
         Main_ad("베스트 셀러를\n무제한으로 읽어보세요", "2개월 무료후 9,900원\n무한eBook서비스 최다 책 보유", "main_ad_img"),
@@ -74,7 +75,8 @@ class HomeFragment : Fragment() {
         // 다른 것과 같이 메모리로 가져오자.
         rvHomefindView = v.findViewById(R.id.rv_home_Find)
         // this 로 현재 context 를 전달하자.
-        findBookAdapter = FindBookAdapter(context!!)
+        findBookAdapter =
+            FindBookAdapter(context!!)
         // 어뎁터에 우리가 정의한 data 를 대입하고
         findBookAdapter.data = findBookDummy.bookList()
         // 우리의 recyclerView 에 우리의 adapter 로 세팅하자.
@@ -90,7 +92,8 @@ class HomeFragment : Fragment() {
 
         //TasteBoook
         rvHometasteView = v.findViewById(R.id.rv_home_taste)
-        tasteBookAdapter = TasteBookAdapter(context!!)
+        tasteBookAdapter =
+            TasteBookAdapter(context!!)
         tasteBookAdapter.data = tasteBookDummy.bookTasteList()
         rvHometasteView.adapter = tasteBookAdapter
         rvHometasteView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)

@@ -1,12 +1,12 @@
-package com.example.myapplication.FindBook
+package com.example.myapplication.ui.fragment.home.FindBook
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.myapplication.R
+import com.example.myapplication.data.BookItem
 
 class HomeFindViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 

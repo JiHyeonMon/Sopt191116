@@ -1,12 +1,12 @@
-package com.example.myapplication.TasteBook
+package com.example.myapplication.ui.fragment.home.TasteBook
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.myapplication.R
+import com.example.myapplication.data.BookTasteItem
 
 class HomeTasteViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 

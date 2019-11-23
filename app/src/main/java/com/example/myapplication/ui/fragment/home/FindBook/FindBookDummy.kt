@@ -1,4 +1,6 @@
-package com.example.myapplication.FindBook
+package com.example.myapplication.ui.fragment.home.FindBook
+
+import com.example.myapplication.data.BookItem
 
 internal class FindBookDummy {
     fun bookList() : List<BookItem>{

@@ -1,13 +1,13 @@
-package com.example.myapplication.FindBook
+package com.example.myapplication.data
 
-data class FindBookData(
+data class TasteBookData(
     val status: Int,
     val success: Boolean,
     val message: String,
-    val data: List<BookItem>
+    val data: List<BookTasteItem>
 )
 
-data class BookItem(
+data class BookTasteItem(
     //val idx: Int,//책 인덱스
     //val url: String,//책 이미지
     val title: String,//책 이름
