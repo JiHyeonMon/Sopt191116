@@ -130,9 +130,11 @@ class HomeFragment : Fragment() {
         rvTodayBestsellerView=v.findViewById(R.id.rv_today_bestseller)
         todayBestsellerAdapter= TodayBestsellerViewAdapter(context!!)
         rvTodayBestsellerView.adapter=todayBestsellerAdapter
-
-        rvTodayBestsellerView.layoutManager=lm
+        val lm2 = LinearLayoutManager(context)
+        rvTodayBestsellerView.layoutManager=lm2
         rvTodayBestsellerView.setHasFixedSize(true)
+        lm2.setOrientation(LinearLayoutManager.HORIZONTAL)
+        todayBestsellerDummy.TodayBestsellerList()
         todayBestsellerAdapter.notifyDataSetChanged()
 
 
