@@ -41,16 +41,16 @@ class ShadowTransformer(val mViewPager:ViewPager,val mAdapter : MainBookAdapter)
         val realCurrentCard : CardView = mAdapter.getCardViewAt(realCurrentPosition)
 
 
-        realCurrentCard.scaleX=(1+0.15*(1-realOffset)).toFloat()
-        realCurrentCard.scaleY=(1+0.15*(1-realOffset)).toFloat()
+        realCurrentCard.scaleX=(1+0.3*(1-realOffset)).toFloat()
+        realCurrentCard.scaleY=(1+0.3*(1-realOffset)).toFloat()
 
         val elevation : Int = 8
         realCurrentCard.cardElevation = baseElevation + baseElevation*(elevation-1)*(1-realOffset)
 
         val nextCard : CardView = mAdapter.getCardViewAt(nextPosition)
 
-        nextCard.scaleX = (1+0.15*(realOffset)).toFloat()
-        nextCard.scaleY = (1+0.15*(realOffset)).toFloat()
+        nextCard.scaleX = (1+0.3*(realOffset)).toFloat()
+        nextCard.scaleY = (1+0.3*(realOffset)).toFloat()
         nextCard.cardElevation = baseElevation + baseElevation*(elevation-1)*(realOffset)
         mLastOffset = positionOffset
     }

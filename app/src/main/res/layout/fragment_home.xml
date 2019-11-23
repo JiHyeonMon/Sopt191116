@@ -196,14 +196,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_context_ck"
-                app:srcCompat="@mipmap/ic_launcher" />
+                android:src="@drawable/keword_img" />
 
             <TextView
                 android:id="@+id/txt_hashtag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:text="#조직 #리더 #경영 #애자일 #리더십 #팀 #인게이지먼트 #"
+                android:layout_marginLeft="16dp"
+                android:text="#조직 #리더 #경영 #애자일 #리더십 #팀 #인게이지먼트 #조직"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_custom_keyword" />
