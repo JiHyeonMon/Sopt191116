@@ -134,7 +134,8 @@ class HomeFragment : Fragment() {
         rvTodayBestsellerView.layoutManager=lm2
         rvTodayBestsellerView.setHasFixedSize(true)
         lm2.setOrientation(LinearLayoutManager.HORIZONTAL)
-        todayBestsellerDummy.TodayBestsellerList()
+
+        todayBestsellerAdapter.data=todayBestsellerDummy.TodayBestsellerList()
         todayBestsellerAdapter.notifyDataSetChanged()
 
 
