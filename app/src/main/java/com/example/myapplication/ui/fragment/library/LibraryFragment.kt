@@ -3,6 +3,7 @@ package com.example.myapplication
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +11,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.example.myapplication.data.BookListItem
-import com.example.myapplication.data.MainBookData
+import com.bumptech.glide.Glide
+import com.example.myapplication.data.*
+import com.example.myapplication.network.RequestURL
+import com.example.myapplication.network.enqueue
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
@@ -21,6 +25,8 @@ class LibraryFragment(context: Context) : Fragment() {
     lateinit var mViewPager : ViewPager
     private lateinit var rvMainBookList: RecyclerView
     private lateinit var bookListAdapter: BookListAdapter
+    private lateinit var myBookData : LibraryData
+    val requestURL = RequestURL
     var ctx = context
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,51 +66,24 @@ class LibraryFragment(context: Context) : Fragment() {
 
 
         bookListAdapter = BookListAdapter(ctx)
-
         rvMainBookList.adapter = bookListAdapter
-
         rvMainBookList.layoutManager = GridLayoutManager(ctx, 3)
-
-        bookListAdapter.data = listOf(
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            ),
-            BookListItem(
-                bookName = "생각을 선물하는 남자",
-                bookWriter = "유형일"
-            )
-        )
+        requestLibraryResponse()
         bookListAdapter.notifyDataSetChanged()
     }
-
+    private fun requestLibraryResponse(){
+        val requestLibraryData = requestURL.service.getMyBook("Sopt")
+        requestLibraryData.enqueue(
+            onResponse = {
+                    response ->
+                if(response.isSuccessful){
+                    myBookData = response.body()!!
+                    Log.d("hj",myBookData.data.toString())
+                    bookListAdapter.data = myBookData.data
+                    bookListAdapter.notifyDataSetChanged()
+                }
+            }
+        )
+    }
 
 }

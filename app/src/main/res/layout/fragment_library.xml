@@ -75,9 +75,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMainBookList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="265dp" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

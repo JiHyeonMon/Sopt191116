@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.data.BookItem
 
@@ -19,11 +20,10 @@ class HomeFindViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val homeFind_checkbox: CheckBox = view.findViewById(R.id.homeFind_checkbox)
 
         fun bind(data: BookItem) {
-            //Glide.with(itemView).load(data.url).into(homeFind_img_book)
-            homeFind_txt_book.text = data.title
+            Glide.with(itemView).load(data.bookcover).into(homeFind_img_book)
+            homeFind_txt_book.text = data.bookname
             homeFind_txt_author.text = data.author
-            homeFind_ratingbar.rating = data.rating
-            homeFind_txt_rating.text = data.rating.toString()+" ("+data.num+")"
+            homeFind_ratingbar.rating = data.star
         }
 
 }

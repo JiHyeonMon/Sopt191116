@@ -4,7 +4,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.data.BookListItem
+import com.bumptech.glide.Glide
+import com.example.myapplication.data.BookLibraryItem
 
 class BookListViewHolder(view : View) : RecyclerView.ViewHolder(view) {
 
@@ -12,9 +13,9 @@ class BookListViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     val tvItemBookName: TextView = view.findViewById(R.id.tv_item_book_name_id)
     val tvItemBookWriter: TextView = view.findViewById(R.id.tv_item_book_writer_id)
 
-    fun bind(data: BookListItem){
-        ivItemBookCover.setImageResource(R.drawable.book_img)
-        tvItemBookName.text = data.bookName
-        tvItemBookWriter.text = data.bookWriter
+    fun bind(data: BookLibraryItem){
+        Glide.with(itemView).load(data.bookcover).into(ivItemBookCover)
+        tvItemBookName.text = data.bookname
+        tvItemBookWriter.text = data.author
     }
 }

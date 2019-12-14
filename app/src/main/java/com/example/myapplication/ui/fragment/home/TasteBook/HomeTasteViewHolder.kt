@@ -5,8 +5,9 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
-import com.example.myapplication.data.BookTasteItem
+import com.example.myapplication.data.BookItem
 
 class HomeTasteViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
@@ -18,12 +19,12 @@ class HomeTasteViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val homeTaste_txt_rating: TextView = view.findViewById(R.id.homeTaste_txt_rating)
         val homeTaste_checkbox: CheckBox = view.findViewById(R.id.homeTaste_checkbox)
 
-        fun bind(data: BookTasteItem) {
-            //Glide.with(itemView).load(data.url).into(homeFind_img_book)
-            homeTaste_txt_book.text = data.title
+        fun bind(data: BookItem) {
+            Glide.with(itemView).load(data.bookcover).into(homeTaste_img_book)
+            homeTaste_txt_book.text = data.bookname
             homeTaste_txt_author.text = data.author
-            homeTaste_ratingbar.rating = data.rating
-            homeTaste_txt_rating.text = data.rating.toString()+" ("+data.num+")"
+            homeTaste_ratingbar.rating = data.star
+            homeTaste_txt_rating.text = data.star.toString()
         }
 
 }
